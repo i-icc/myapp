@@ -1,0 +1,12 @@
+{% extends './base.html' %}
+{% block content %}
+    {% if article_list %}
+        {% for article in article_list reversed %}
+                    <h2><a href="/pienter/acount/{{ article.acount.user_id }}/">{{ article.acount.name}}</a></h2>
+          <p><a href="/pienter/{{ article.id }}/">{{ article.content }}</a></p>
+          <h4>{{ article.date }}  🥺*{{ article.pien }}</h4>
+        {% endfor %}
+    {% else %}
+      <p>no pien</p>
+    {% endif %}
+{% endblock %}
